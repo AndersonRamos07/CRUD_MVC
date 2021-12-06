@@ -1,0 +1,23 @@
+{
+  "name": "lotopuppet",
+  "version": "1.0.0",
+  "description": "'Teste de App para resultados de loteria'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndersonRamos07/CRUD_MVC.git"
+  },
+  "author": "Anderson Ramos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndersonRamos07/CRUD_MVC/issues"
+  },
+  "homepage": "https://github.com/AndersonRamos07/CRUD_MVC#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "puppeteer": "^12.0.1"
+  }
+}
