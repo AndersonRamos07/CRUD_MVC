@@ -1,5 +1,7 @@
 const express = require('express')();
 const gets = require('./funcoes');
+const getsII = require('./functionII');
+
 
 const port = 3000;
 
@@ -7,13 +9,13 @@ express.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/html/index.html');
 })
 
-express.get('/Resultados', (req, res) => {
-    var resposta = gets.getResultados('lotofacil');
+express.get('/Resultados', async (req, res) => {
+    var resposta = await gets.getResultados('lotofacil');
     res.send(resposta);
 })
 
-express.get('/ganhadores', (req, res) => {
-    var resposta = gets.getGanhadores();
+express.get('/ganhadores', async (req, res) => {
+    res.send( await getsII.gol('lotofacil'));
 })
 
 express.listen(port, () => {
