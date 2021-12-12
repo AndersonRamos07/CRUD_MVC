@@ -5,22 +5,26 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>LOTO-INDEX</title>
+       <!-- <script src="../javascript/scripts.js"></script> -->
     </head>
     <body>
 
-        <select>
-            <option value="lotofacil">lotofacil</option>
-            <option value="federal">federal</option>
-            <option value="lotomania">lotomania</option>
-            <option value="quina">quina</option>
-            <option value="dupla-sena">dupla-sena</option>
-            <option value="megaSena">megaSena</option>
-            <option value="timemania">timemania</option>
-            <option value="diadesorte">diadesorte</option>
-        </select>
-        
-        <button onclick='location.href="/Resultados"'>Resultados</button>
-        <button onclick='location.href="/Ganhadores"'>Ganhadores</button>
+        <form action="/resultados" method="post">
+            <select name="opcaoLoteria" id="opcaoLoteria">
+                <option value="lotofacil">Lotofácil</option>
+                <option value="lotomania">Lotomania</option>
+                <option value="quina">Quina</option>
+                <option value="duplasena">Dupla Sena</option>
+                <option value="megasena">Mega-Sena</option>
+                <option value="timemania">Timemania</option>
+                <option value="diadesorte">Dia de Sorte</option>
+                <option value="supersete">Super Sete</option>
+            </select>
+            <button type="submit">Resultados</button>
+        </form>
+        <hr>
+
+        <button onclick='location.href="/ganhadores"'>Ganhadores</button>
         <button onclick='alert("BOTÃO SAIR")'>SAIR</button>
         <button onclick='location.reload()'>ATUALIZAR</button>
         

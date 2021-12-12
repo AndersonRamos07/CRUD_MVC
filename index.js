@@ -1,25 +1,21 @@
 const express = require('express')();
-const funcao = require('./functions');
+const funcao = require('./funcoes');
+const bodyParser = require('body-parser');
 
+express.use(bodyParser.urlencoded({extended: false}));
 
-const port = 3000;
+const port = 8000;
 
 express.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/html/index.html');
 })
 
-express.get('/Resultados', async (req, res) => {
-    res.send(await funcao.gol(req))
-    /*
-    var resposta = await getsII.gol('lotofacil');
-    res.render(__dirname + '/public/html/resultados.html', resposta);
-    */
+express.post('/resultados', async (req, res) => {
+    res.send({"resultados": await funcao.resultados(req.body.opcaoLoteria)});
 })
 
-express.get('/ganhadores', async (req, res) => {
-   // var resultado = await getsII.gol('lotofacil');
-  //  res.render(__dirname + '/public/html/resultados.html', {resultados:resultado});
-    res.send(await getsII.gol('lotofacil'))
+express.post('/ganhadores', async (req, res) => {
+    //res.send(await funcao.gol('lotofacil'))
 })
 
 express.listen(port, () => {
