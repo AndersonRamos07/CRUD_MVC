@@ -1,6 +1,5 @@
 const express = require('express')();
-const gets = require('./funcoes');
-const getsII = require('./functionII');
+const funcao = require('./functions');
 
 
 const port = 3000;
@@ -10,12 +9,17 @@ express.get('/', (req, res) => {
 })
 
 express.get('/Resultados', async (req, res) => {
-    var resposta = await gets.getResultados('lotofacil');
-    res.send(resposta);
+    res.send(await funcao.gol(req))
+    /*
+    var resposta = await getsII.gol('lotofacil');
+    res.render(__dirname + '/public/html/resultados.html', resposta);
+    */
 })
 
 express.get('/ganhadores', async (req, res) => {
-    res.send( await getsII.gol('lotofacil'));
+   // var resultado = await getsII.gol('lotofacil');
+  //  res.render(__dirname + '/public/html/resultados.html', {resultados:resultado});
+    res.send(await getsII.gol('lotofacil'))
 })
 
 express.listen(port, () => {
